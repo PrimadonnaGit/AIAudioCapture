@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBD525DF2D71E900003A8DCD /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD525DE2D71E900003A8DCD /* CoreAudio.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB6FF6AD2D71E20600D02102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB6FF6932D71E20500D02102 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB6FF69A2D71E20500D02102;
+			remoteInfo = AIAudioSummary;
+		};
+		EB6FF6B72D71E20600D02102 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB6FF6932D71E20500D02102 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB6FF69A2D71E20500D02102;
+			remoteInfo = AIAudioSummary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB6FF69B2D71E20500D02102 /* AIAudioSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIAudioSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB6FF6AC2D71E20600D02102 /* AIAudioSummaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIAudioSummaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB6FF6B62D71E20600D02102 /* AIAudioSummaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIAudioSummaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD525DE2D71E900003A8DCD /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EB6FF6CC2D71E2F200D02102 /* Exceptions for "AIAudioSummary" folder in "AIAudioSummary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EB6FF69A2D71E20500D02102 /* AIAudioSummary */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EB6FF69D2D71E20500D02102 /* AIAudioSummary */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EB6FF6CC2D71E2F200D02102 /* Exceptions for "AIAudioSummary" folder in "AIAudioSummary" target */,
+			);
+			path = AIAudioSummary;
+			sourceTree = "<group>";
+		};
+		EB6FF6AF2D71E20600D02102 /* AIAudioSummaryTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AIAudioSummaryTests;
+			sourceTree = "<group>";
+		};
+		EB6FF6B92D71E20600D02102 /* AIAudioSummaryUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AIAudioSummaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB6FF6982D71E20500D02102 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD525DF2D71E900003A8DCD /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6A92D71E20600D02102 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6B32D71E20600D02102 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB6FF6922D71E20500D02102 = {
+			isa = PBXGroup;
+			children = (
+				EB6FF69D2D71E20500D02102 /* AIAudioSummary */,
+				EB6FF6AF2D71E20600D02102 /* AIAudioSummaryTests */,
+				EB6FF6B92D71E20600D02102 /* AIAudioSummaryUITests */,
+				EBD525DD2D71E900003A8DCD /* Frameworks */,
+				EB6FF69C2D71E20500D02102 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB6FF69C2D71E20500D02102 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB6FF69B2D71E20500D02102 /* AIAudioSummary.app */,
+				EB6FF6AC2D71E20600D02102 /* AIAudioSummaryTests.xctest */,
+				EB6FF6B62D71E20600D02102 /* AIAudioSummaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBD525DD2D71E900003A8DCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBD525DE2D71E900003A8DCD /* CoreAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB6FF69A2D71E20500D02102 /* AIAudioSummary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB6FF6C02D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummary" */;
+			buildPhases = (
+				EB6FF6972D71E20500D02102 /* Sources */,
+				EB6FF6982D71E20500D02102 /* Frameworks */,
+				EB6FF6992D71E20500D02102 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EB6FF69D2D71E20500D02102 /* AIAudioSummary */,
+			);
+			name = AIAudioSummary;
+			packageProductDependencies = (
+			);
+			productName = AIAudioSummary;
+			productReference = EB6FF69B2D71E20500D02102 /* AIAudioSummary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB6FF6AB2D71E20600D02102 /* AIAudioSummaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB6FF6C32D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummaryTests" */;
+			buildPhases = (
+				EB6FF6A82D71E20600D02102 /* Sources */,
+				EB6FF6A92D71E20600D02102 /* Frameworks */,
+				EB6FF6AA2D71E20600D02102 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB6FF6AE2D71E20600D02102 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EB6FF6AF2D71E20600D02102 /* AIAudioSummaryTests */,
+			);
+			name = AIAudioSummaryTests;
+			packageProductDependencies = (
+			);
+			productName = AIAudioSummaryTests;
+			productReference = EB6FF6AC2D71E20600D02102 /* AIAudioSummaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB6FF6B52D71E20600D02102 /* AIAudioSummaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB6FF6C62D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummaryUITests" */;
+			buildPhases = (
+				EB6FF6B22D71E20600D02102 /* Sources */,
+				EB6FF6B32D71E20600D02102 /* Frameworks */,
+				EB6FF6B42D71E20600D02102 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB6FF6B82D71E20600D02102 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EB6FF6B92D71E20600D02102 /* AIAudioSummaryUITests */,
+			);
+			name = AIAudioSummaryUITests;
+			packageProductDependencies = (
+			);
+			productName = AIAudioSummaryUITests;
+			productReference = EB6FF6B62D71E20600D02102 /* AIAudioSummaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB6FF6932D71E20500D02102 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					EB6FF69A2D71E20500D02102 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					EB6FF6AB2D71E20600D02102 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EB6FF69A2D71E20500D02102;
+					};
+					EB6FF6B52D71E20600D02102 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = EB6FF69A2D71E20500D02102;
+					};
+				};
+			};
+			buildConfigurationList = EB6FF6962D71E20500D02102 /* Build configuration list for PBXProject "AIAudioSummary" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB6FF6922D71E20500D02102;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EB6FF69C2D71E20500D02102 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB6FF69A2D71E20500D02102 /* AIAudioSummary */,
+				EB6FF6AB2D71E20600D02102 /* AIAudioSummaryTests */,
+				EB6FF6B52D71E20600D02102 /* AIAudioSummaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB6FF6992D71E20500D02102 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6AA2D71E20600D02102 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6B42D71E20600D02102 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB6FF6972D71E20500D02102 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6A82D71E20600D02102 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB6FF6B22D71E20600D02102 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB6FF6AE2D71E20600D02102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB6FF69A2D71E20500D02102 /* AIAudioSummary */;
+			targetProxy = EB6FF6AD2D71E20600D02102 /* PBXContainerItemProxy */;
+		};
+		EB6FF6B82D71E20600D02102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB6FF69A2D71E20500D02102 /* AIAudioSummary */;
+			targetProxy = EB6FF6B72D71E20600D02102 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EB6FF6BE2D71E20600D02102 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB6FF6BF2D71E20600D02102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		EB6FF6C12D71E20600D02102 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIAudioSummary/AIAudioSummary.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIAudioSummary/Preview Content\"";
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AIAudioSummary/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "음성 녹음을 위해 마이크 사용 권한이 필요합니다.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EB6FF6C22D71E20600D02102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIAudioSummary/AIAudioSummary.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AIAudioSummary/Preview Content\"";
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AIAudioSummary/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "음성 녹음을 위해 마이크 사용 권한이 필요합니다.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EB6FF6C42D71E20600D02102 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIAudioSummary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIAudioSummary";
+			};
+			name = Debug;
+		};
+		EB6FF6C52D71E20600D02102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AIAudioSummary.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AIAudioSummary";
+			};
+			name = Release;
+		};
+		EB6FF6C72D71E20600D02102 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AIAudioSummary;
+			};
+			name = Debug;
+		};
+		EB6FF6C82D71E20600D02102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5YL3T7N29M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = primadonna.AIAudioSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AIAudioSummary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB6FF6962D71E20500D02102 /* Build configuration list for PBXProject "AIAudioSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB6FF6BE2D71E20600D02102 /* Debug */,
+				EB6FF6BF2D71E20600D02102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB6FF6C02D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB6FF6C12D71E20600D02102 /* Debug */,
+				EB6FF6C22D71E20600D02102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB6FF6C32D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB6FF6C42D71E20600D02102 /* Debug */,
+				EB6FF6C52D71E20600D02102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB6FF6C62D71E20600D02102 /* Build configuration list for PBXNativeTarget "AIAudioSummaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB6FF6C72D71E20600D02102 /* Debug */,
+				EB6FF6C82D71E20600D02102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB6FF6932D71E20500D02102 /* Project object */;
+}

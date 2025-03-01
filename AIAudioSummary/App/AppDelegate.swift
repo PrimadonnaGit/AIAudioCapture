@@ -1,56 +1,15 @@
 //
-//  AIAudioSummaryApp.swift
+//  AppDelegate.swift
 //  AIAudioSummary
 //
 //  Created by primadonna on 2/28/25.
 //
+
 import SwiftUI
 import Combine
 import AVFoundation
 import UserNotifications
 
-// 앱의 메인 진입점
-@main
-struct AudioCaptureApp: App {
-    @NSApplicationDelegateAdaptor(AudioAppDelegate.self) var appDelegate
-    
-    var body: some Scene {
-        WindowGroup {
-            ContentView(audioCaptureManager: appDelegate.audioCaptureManager)
-                .frame(minWidth: 800, minHeight: 1000)
-                .onAppear {
-                    NSWindow.allowsAutomaticWindowTabbing = false
-                }
-        }
-        .windowStyle(HiddenTitleBarWindowStyle())
-        .commands {
-            // 기본 New 메뉴 항목 제거
-            CommandGroup(replacing: .newItem) { }
-            
-            // 오디오 관련 메뉴 추가
-            CommandMenu("오디오") {
-                Button("장치 선택...") {
-                    NotificationCenter.default.post(name: NSNotification.Name("ShowDeviceSelector"), object: nil)
-                }
-                .keyboardShortcut("d", modifiers: [.command])
-                
-                Divider()
-                
-                Button("녹음 시작") {
-                    NotificationCenter.default.post(name: NSNotification.Name("StartRecording"), object: nil)
-                }
-                .keyboardShortcut("r", modifiers: [.command])
-                
-                Button("녹음 중지") {
-                    NotificationCenter.default.post(name: NSNotification.Name("StopRecording"), object: nil)
-                }
-                .keyboardShortcut(".", modifiers: [.command])
-            }
-        }
-    }
-}
-
-// 앱 델리게이트 - 시스템 트레이 아이콘 및 기타 앱 수준 기능 관리
 class AudioAppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem!
     var audioCaptureManager = AudioCaptureManager()
@@ -77,7 +36,6 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(stopRecording), name: NSNotification.Name("StopRecording"), object: nil)
         
         requestMicrophoneAccess()
-
         
         print("===== 애플리케이션 초기화 완료 =====\n")
     }
@@ -263,23 +221,5 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
             notification.soundName = NSUserNotificationDefaultSoundName
             NSUserNotificationCenterLegacy.default.deliver(notification)
         }
-    }
-}
-
-// 이전 macOS 버전 호환성을 위한 레거시 알림 클래스
-@available(macOS, introduced: 10.10, deprecated: 11.0, message: "Use UserNotifications Framework's UNUserNotificationCenter instead")
-class NSUserNotificationLegacy: NSObject {
-    @objc var title: String?
-    @objc var informativeText: String?
-    @objc var soundName: String?
-}
-
-@available(macOS, introduced: 10.10, deprecated: 11.0, message: "Use UserNotifications Framework's UNUserNotificationCenter instead")
-class NSUserNotificationCenterLegacy: NSObject {
-    @objc static let `default` = NSUserNotificationCenterLegacy()
-    
-    @objc func deliver(_ notification: NSUserNotificationLegacy) {
-        // 실제 구현에서는 진짜 NSUserNotificationCenter를 사용할 것입니다
-        print("알림 전송: \(notification.title ?? "")")
     }
 }

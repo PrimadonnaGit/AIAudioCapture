@@ -8,7 +8,6 @@
 import XCTest
 
 final class AIAudioSummaryUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

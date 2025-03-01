@@ -5,44 +5,55 @@
 //  Created by primadonna on 2/28/25.
 //
 
-import SwiftUI
-import Combine
 import AVFoundation
+import Combine
+import SwiftUI
 import UserNotifications
 
 class AudioAppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem!
     var audioCaptureManager = AudioCaptureManager()
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+    func applicationDidFinishLaunching(_: Notification) {
         print("\n===== 애플리케이션 시작 =====")
         print("macOS 버전: \(ProcessInfo.processInfo.operatingSystemVersionString)")
-        
+
         // 장치 검색은 지연시켜 BlackHole이 로드될 시간을 줍니다
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             guard let self = self else { return }
             print("오디오 장치 로드 중...")
             self.audioCaptureManager.loadAudioDevices()
-            
+
             // BlackHole 설치 확인
             self.checkBlackHoleInstallation()
         }
-        
+
         setupStatusBarItem()
-        
+
         // 알림 수신 설정
         NotificationCenter.default.addObserver(self, selector: #selector(showDeviceSelector), name: NSNotification.Name("ShowDeviceSelector"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(startRecording), name: NSNotification.Name("StartRecording"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopRecording), name: NSNotification.Name("StopRecording"), object: nil)
-        
+
         requestMicrophoneAccess()
-        
+
         print("===== 애플리케이션 초기화 완료 =====\n")
     }
-    
+
+    func applicationWillTerminate(_: Notification) {
+        // 종료 전 정리 작업
+        SummaryManager.shared.cleanup()
+        TempFileManager.shared.cleanupTempFiles()
+    }
+
+    func applicationDidEnterBackground(_: Notification) {
+        // 백그라운드 진입 시 정리
+        SummaryManager.shared.cleanup()
+    }
+
     private func requestMicrophoneAccess() {
         print("마이크 접근 권한 요청 중...")
-        
+
         // AVCaptureDevice를 사용하여 권한 요청
         AVCaptureDevice.requestAccess(for: .audio) { granted in
             DispatchQueue.main.async {
@@ -50,7 +61,7 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
                     print("✅ 마이크 접근 권한이 허용되었습니다")
                 } else {
                     print("⚠️ 마이크 접근 권한이 거부되었습니다")
-                    
+
                     // 사용자에게 알림 표시
                     let alert = NSAlert()
                     alert.messageText = "마이크 접근 권한 필요"
@@ -58,7 +69,7 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
                     alert.alertStyle = .warning
                     alert.addButton(withTitle: "설정 열기")
                     alert.addButton(withTitle: "나중에")
-                    
+
                     let response = alert.runModal()
                     if response == .alertFirstButtonReturn {
                         // 시스템 환경설정 열기
@@ -70,39 +81,39 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
+
     // 상태 표시줄 아이콘 설정
     private func setupStatusBarItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        
+
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "waveform", accessibilityDescription: nil)
             button.action = #selector(toggleRecording)
         }
-        
+
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "시작/중지", action: #selector(toggleRecording), keyEquivalent: "r"))
         menu.addItem(NSMenuItem(title: "장치 선택...", action: #selector(showDeviceSelector), keyEquivalent: "d"))
         menu.addItem(NSMenuItem(title: "앱 표시", action: #selector(showApp), keyEquivalent: "a"))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "종료", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        
+
         statusItem.menu = menu
     }
-    
+
     // BlackHole 설치 확인 및 안내
     private func checkBlackHoleInstallation() {
         print("\n----- BlackHole 드라이버 확인 -----")
-        
+
         let hasBlackHole = audioCaptureManager.availableAudioDevices.contains { $0.name.contains("BlackHole") }
         print("BlackHole 드라이버 발견됨: \(hasBlackHole)")
-        
+
         if hasBlackHole {
             // BlackHole 장치 정보 출력
             if let blackholeDevice = audioCaptureManager.availableAudioDevices.first(where: { $0.name.contains("BlackHole") }) {
                 print("BlackHole 장치 정보: 이름=\(blackholeDevice.name), ID=\(blackholeDevice.id)")
             }
-            
+
             // 자동으로 BlackHole 선택 시도
             if audioCaptureManager.selectedDeviceID == nil {
                 if let blackholeDevice = audioCaptureManager.availableAudioDevices.first(where: { $0.name.contains("BlackHole") }) {
@@ -112,7 +123,7 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
             }
         } else {
             print("⚠️ BlackHole 드라이버를 찾을 수 없습니다")
-            
+
             // 알림창 표시
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 let alert = NSAlert()
@@ -121,7 +132,7 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
                 alert.alertStyle = .informational
                 alert.addButton(withTitle: "GitHub에서 다운로드")
                 alert.addButton(withTitle: "나중에")
-                
+
                 let response = alert.runModal()
                 if response == .alertFirstButtonReturn {
                     if let url = URL(string: "https://github.com/ExistentialAudio/BlackHole") {
@@ -130,10 +141,10 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
-        
+
         print("---------------------------------\n")
     }
-    
+
     // 녹음 시작/중지 토글
     @objc func toggleRecording() {
         if audioCaptureManager.isRecording {
@@ -142,66 +153,66 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
             startRecording()
         }
     }
-    
+
     // 장치 선택기 표시
     @objc func showDeviceSelector() {
         NotificationCenter.default.post(name: NSNotification.Name("ShowDeviceSelector"), object: nil)
         showApp()
     }
-    
+
     // 녹음 시작
     @objc func startRecording() {
         if audioCaptureManager.isRecording {
             return
         }
-        
+
         let savePanel = NSSavePanel()
         savePanel.allowedContentTypes = [UTType.wav]
         savePanel.nameFieldStringValue = "System_Audio_Recording_\(Date().timeIntervalSince1970)"
-        
+
         NSApp.activate(ignoringOtherApps: true)
-        
+
         savePanel.begin { [weak self] response in
             guard let self = self, response == .OK, let url = savePanel.url else { return }
             self.audioCaptureManager.startRecording(to: url)
-            
+
             // 상태바 아이콘 업데이트
             if let button = self.statusItem.button {
                 button.image = NSImage(systemSymbolName: "waveform.circle.fill", accessibilityDescription: nil)
             }
-            
+
             // 알림 표시
             self.showNotification(title: "녹음 시작", message: "시스템 오디오 녹음이 시작되었습니다.")
         }
     }
-    
+
     // 녹음 중지
     @objc func stopRecording() {
         if !audioCaptureManager.isRecording {
             return
         }
-        
+
         audioCaptureManager.stopRecording()
-        
+
         // 상태바 아이콘 업데이트
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "waveform", accessibilityDescription: nil)
         }
-        
+
         // 알림 표시
         showNotification(title: "녹음 완료", message: "시스템 오디오 녹음이 완료되었습니다.")
     }
-    
+
     // 앱 창 표시
     @objc func showApp() {
         NSApp.activate(ignoringOtherApps: true)
-        
+
         // 이미 열려있는 창이 있으면 앞으로 가져오기
         if let window = NSApp.windows.first {
             window.makeKeyAndOrderFront(nil)
         }
     }
-    
+
     // 시스템 알림 표시
     private func showNotification(title: String, message: String) {
         if #available(macOS 11.0, *) {
@@ -210,7 +221,7 @@ class AudioAppDelegate: NSObject, NSApplicationDelegate {
             content.title = title
             content.body = message
             content.sound = UNNotificationSound.default
-            
+
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
             UNUserNotificationCenter.current().add(request)
         } else {

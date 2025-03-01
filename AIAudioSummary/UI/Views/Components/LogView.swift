@@ -11,27 +11,27 @@ struct LogView: View {
     let logMessages: [LogMessage]
     let theme: SolarizedTheme
     let onClear: () -> Void
-    
+
     private var logDateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss.SSS"
         return formatter
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("활동 로그")
                     .font(.system(size: 15, weight: .medium, design: .rounded))
                     .foregroundColor(theme.brightText)
-                
+
                 Spacer()
-                
+
                 Text("\(logMessages.count)개 항목")
                     .font(.system(size: 13, design: .rounded))
                     .foregroundColor(theme.dimText)
             }
-            
+
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 8) {
                     ForEach(logMessages) { message in
@@ -40,7 +40,7 @@ struct LogView: View {
                             Text(message.timestamp, formatter: logDateFormatter)
                                 .font(.system(size: 12, weight: .medium, design: .monospaced))
                                 .foregroundColor(theme.dimText)
-                            
+
                             // 메시지 내용
                             Text(message.text)
                                 .font(.system(size: 12, design: .rounded))
@@ -75,7 +75,7 @@ struct LogView: View {
                 .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 3)
         )
     }
-    
+
     // 로그 메시지 색상 선택
     private func getLogTextColor(message: String) -> Color {
         if message.contains("⚠️") {

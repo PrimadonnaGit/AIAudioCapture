@@ -18,7 +18,7 @@ class NSUserNotificationLegacy: NSObject {
 @available(macOS, introduced: 10.10, deprecated: 11.0, message: "Use UserNotifications Framework's UNUserNotificationCenter instead")
 class NSUserNotificationCenterLegacy: NSObject {
     @objc static let `default` = NSUserNotificationCenterLegacy()
-    
+
     @objc func deliver(_ notification: NSUserNotificationLegacy) {
         // 실제 구현에서는 진짜 NSUserNotificationCenter를 사용할 것입니다
         print("알림 전송: \(notification.title ?? "")")

@@ -16,4 +16,3 @@ struct LogMessage: Identifiable {
 
 // AudioDeviceID 타입 추가
 typealias AudioDeviceID = UInt32
-
